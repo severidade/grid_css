@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './Navbar.module.css';
 
 export default function Navbar() {
 
   return(
-    <header className="container_header">
+    <header className={ styles.container_header}>
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/make_grid">Make Grid</NavLink>

@@ -30,17 +30,16 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <h1>Página Home</h1>
-      <div className="container">
+      <div className="container_master">
         <div className="container_title">
           <h2><strong>Introdução</strong></h2>
         </div>
         <article className="container_article">
-          <p>CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Grids que podem usados para "layoutar" tanto as grandes regiões de uma página como os pequenos elementos de uma interface de usuários.</p>
+          <p>CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Os Grids podem usados para organizar os layouts tanto de grandes regiões de uma página como os pequenos elementos de uma interface de usuários.</p>
         </article>
         <div className="container_video">
           {!isVideoPlaying && (
-            <div>
+            <div className="container_thumbnail">
               {thumbnailUrl && (
                 <img src={thumbnailUrl} alt="Thumbnail do vídeo" />
               )}

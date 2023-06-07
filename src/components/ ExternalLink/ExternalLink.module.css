@@ -8,9 +8,10 @@
 
 .social_codpen{
   background: url(./img/codpen.svg) center / contain no-repeat;
+  background-size: 80%;
 }
 
 .social_specky{
   background: url(./img/specky.png) center / contain no-repeat;
-  background-size: 90%;
+  background-size: 75%;
 }

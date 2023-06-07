@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import ReactPlayer from "react-player";
 import fetchThumbnailUrl from "../utils/fetchThumbnailUrl";
+import ExternalLink from "../components/ ExternalLink/ExternalLink";
 
 export default function Home() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -30,24 +31,48 @@ export default function Home() {
     <>
       <Navbar />
       <h1>Página Home</h1>
-      {!isVideoPlaying && (
-        <div>
-          {thumbnailUrl && (
-            <img src={thumbnailUrl} alt="Thumbnail do vídeo" />
-          )}
-          <button onClick={handleVideoPlay}>Play</button>
+      <div className="container_master">
+        <div className="site_titulo">
+          <h2><strong>Introdução</strong></h2>
         </div>
-      )}
-      {isVideoPlaying && (
-        <ReactPlayer
-          className="video"
-          url={`https://www.youtube.com/watch?v=${videoId}`}
-          playing={true}
-          controls
-          width="100%"
-          height="100%"
-        />
-      )}
+        <div className="artigo">
+          <p>CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Grids que podem usados para "layoutar" tanto as grandes regiões de uma página como os pequenos elementos de uma interface de usuários.</p>
+        </div>
+        <div className="video_container">
+          {!isVideoPlaying && (
+            <div>
+              {thumbnailUrl && (
+                <img src={thumbnailUrl} alt="Thumbnail do vídeo" />
+              )}
+              <button onClick={handleVideoPlay}>Play</button>
+            </div>
+          )}
+          {isVideoPlaying && (
+            <ReactPlayer
+              className="video"
+              url={`https://www.youtube.com/watch?v=${videoId}`}
+              playing={true}
+              controls
+              width="100%"
+              height="100%"
+            />
+          )}
+        </div>
+        <div>
+          <ExternalLink 
+            href={"https://codepen.io/rachelandrew/"}
+            linkText={"codpen"} 
+            social_type={"codpen"} 
+          />
+          <ExternalLink 
+            href={"https://speckyboy.com/dev-talks-presentations-future-css/"}
+            linkText={"specky"} 
+            social_type={"specky"} 
+          />
+        </div>
+        
+      </div>
+      
     </>
   );
 }

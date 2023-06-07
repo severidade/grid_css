@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+</head>
+<body>
+	<header class="menu">
+			<div class="navbar">
+				<div class="hamburguer"><div class="hotspot"></div></div>
+				<a href="index.html" class="title">
+					<h1>CSS <strong>Grid Layout</strong></h1>
+				</a>
+			</div>
+			<div class="menuoptions">
+				<div class="closeMenu"><div class="hotspot"></div></div>
+				<!--  NIVEL 1 -->
+				<div class="menu_level_01">
+					<nav>
+						<a id="option01_0" href="">Definindo o Grid</a>
+						<a id="option01_1" href="">Opção_01</a>
+						<a id="option01_2" class="sub" href="#menuoptions_02_2" href="">Opção_02</a>
+						<a id="option01_3" href="">Opção_03</a>
+						<a id="option01_4" class="sub" href="#menuoptions_02_4">Opção_04</a>
+						<a id="option01_5" href="">Opção_05</a>
+						<a id="option01_6" href="">Opção_06</a>
+						<a id="option01_7" href="">Opção_07</a>
+					</nav>
+				</div>
+				<!--  NIVEL 2 -->
+				<div class="menu_level_02" id="menuoptions_02_2">
+					<span class="label_menu">Opção_02</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_02_1</a>
+						<a class="level_02" href="">Opção_02_2</a>
+						<a class="level_02" href="">Opção_02_3</a>
+						<a class="level_02" href="">Opção_02_4</a>					
+					</nav>
+				</div>
+				<div class="menu_level_02" id="menuoptions_02_4">
+					<span class="label_menu">Opção_04</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_04_1</a>
+						<a class="level_02" href="">Opção_04_2</a>
+						<a class="level_02" href="">Opção_04_3</a>
+						<a class="level_02" href="">Opção_04_4</a>			
+					</nav>
+				</div>
+		
+			</div>
+	</header>
+
+	<div class="connteiner_master">
+		<div>
+			<h3>Definindo o grid</h3>
+
+
+
+		<div>
+			<pre class="line-numbers language-css"><code class="language-css">p { color: red }</code></pre>
+		</div>
+
+
+
+
+		<div>
+			<h3>links</h3>
+			<ul>
+				<li><a href="https://codepen.io/rachelandrew/">Codpen com exemplos da palestra</a></li>
+				<li><a href="https://codepen.io/tutsplus/full/pNgZpj/">Cartoon Modelo</a></li>
+				<li><a href="https://speckyboy.com/dev-talks-presentations-future-css/">Grid em Hexagonos</a></li>
+				<li><a href="https://speckyboy.com/dev-talks-presentations-future-css/">artigo</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+<script src="js/menu.js"></script>
+<script src="js/prism.js"></script>
+</body>
+</html>

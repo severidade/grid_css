@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+	<header class="menu">
+			<div class="navbar">
+				<div class="hamburguer"><div class="hotspot"></div></div>
+				<a href="index.html" class="title">
+					<h1>CSS <strong>Grid Layout</strong></h1>
+				</a>
+			</div>
+			<div class="menuoptions">
+				<div class="closeMenu"><div class="hotspot"></div></div>
+				<!--  NIVEL 1 -->
+				<div class="menu_level_01">
+					<nav>
+						<a id="option01_0" href="definindo_grid.html">Definindo o Grid</a>
+						<a id="option01_1" href="definindo_grid_implicito.html">Grid Implicito</a>
+						<a id="option01_2" href="posicionando_elementos_grid.html">Posicionando no Grid</a>
+						<a id="option01_3" href="">Opção_03</a>
+						<a id="option01_4" class="sub" href="#menuoptions_02_4">Opção_04</a>
+						<a id="option01_5" href="">Opção_05</a>
+						<a id="option01_6" href="">Opção_06</a>
+						<a id="option01_7" href="">Opção_07</a>
+					</nav>
+				</div>
+				<!--  NIVEL 2 -->
+				<div class="menu_level_02" id="menuoptions_02_2">
+					<span class="label_menu">Opção_02</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_02_1</a>
+						<a class="level_02" href="">Opção_02_2</a>
+						<a class="level_02" href="">Opção_02_3</a>
+						<a class="level_02" href="">Opção_02_4</a>					
+					</nav>
+				</div>
+				<div class="menu_level_02" id="menuoptions_02_4">
+					<span class="label_menu">Opção_04</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_04_1</a>
+						<a class="level_02" href="">Opção_04_2</a>
+						<a class="level_02" href="">Opção_04_3</a>
+						<a class="level_02" href="">Opção_04_4</a>			
+					</nav>
+				</div>
+		
+			</div>
+	</header>
+
+	<div class="connteiner_master_internas">
+		<div class="titulo"><h3>Posicionando elementos no grid</h3></div>
+		<div class="texto">
+			<h4>Conhecendo os termos</h4>
+			<div class="glossario">
+				<div class="glossario_termo">
+					<p><strong>Grid Track</strong> é o espaço entre duas <strong>grid lines</strong>. É definido no grid explícito usando <strong class="codigo">grid-template-columns</strong> e <strong class="codigo">grid-template-rows</strong></p>
+					<!--<img src="img/grid_track.png" alt="">-->
+				</div>
+				<div class="glossario_termo">
+					<p><strong>Grid Lines</strong> são verticais e horizontais e podem ser referidas através de um número ou pelo nome. Quando definido um valor para o <strong class="codigo">grid-gap</strong> elas ficam mais largas.</p>
+					<img src="" alt="">
+				</div>
+				<div class="glossario_termo">
+					<p><strong>Grid Cell</strong> É a menor unidade em um grid delimitada por quatro <strong>grid lines</strong> comparado a uma célula de uma tabela.</p>
+					<img src="" alt="">
+				</div>
+				<div class="glossario_termo">
+					<p><strong>Grid Area</strong> Qualquer área no grid definida por quatro <strong>grid lines</strong> que contenha mais do que uma <strong>grid-cell</strong></p>
+					<img src="" alt="">
+				</div>
+			</div>	
+		</div>
+	
+
+	<div class="texto">
+			<h4>Criando um Grid Base</h4>
+			<p>Para exemplificar estou criando um grid com três colunas e adicinando colunas outomáticas com altura de 200px usando a propriedade <strong>grid-auto-rows</strong>.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 09</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 200px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_09">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+			<h4>Posicionando usando Line Numbers</h4>
+			<p>Os exemplos 10 a 12 definem para o elemento 1 sua <strong>grid-area</strong> com base na numeração das colunas. O resultado é o mesmo mas a forma de declarar varia.</p> 
+			<p> No <strong>Exemplo 10</strong> a área é declarada usando as propriedades <strong class="codigo">grid-column-start</strong>, <strong class="codigo">grid-column-end</strong>, <strong class="codigo">grid-row-start</strong> e <strong class="codigo">grid-row-end</strong>.</p>
+
+	</div>
+
+	<div class="codigo">
+		<h5>Exemplo 10</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 200px;
+	grid-gap: 10px;
+}	
+.cards .item:nth-child(1) {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_10">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+		</div>
+	</div>
+
+	<div class="codigo">
+		<h5>Exemplo 11</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 200px;
+	grid-gap: 10px;
+}	
+.cards .item:nth-child(1) {
+	grid-column: 2 / 4;
+	grid-row: 1 / 3;
+}
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_11">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+		<h4>Posicionando usando Grid-area</h4>
+		<p>A decralação mais simples feita referenciando o número das linhas que delimitam a área que o <strong>grid item</strong> devera ocupar é feita através da propriedade <strong class="codigo">grid-area</strong> com os valores correspondentes ao <strong>grid-row-start</strong>, <strong>grid-column_start</strong>, <strong>grid-row-end</strong> e <strong>grid-column-end</strong> separados por "/".</p>
+		<p class="obs">Ao contrário da declaração de padding os valores usados correspondem a declaração dos limites da área no sentido anti-horário.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 12</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 200px;
+	grid-gap: 10px;
+}	
+.cards .item:nth-child(1) {
+	grid-area: 1 / 2 / 3 / 4;
+}
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_12">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+		<h4>Posicionando usando line names</h4>
+		<p>Quando o grid é criado as linhas devem ser nomeadas. Assim os <strong>grid-itens</strong> poderão ser posicionados no grid das seguintes formas:</p>
+		<ul>
+			<li>Mencionando o <strong>nome das linhas</strong> que delimitam o início e o fim da área do <strong>grid-item</strong> com as propriedades <strong class="codigo">grid-column-start</strong>, <strong class="codigo">grid-column-end</strong>, <strong class="codigo">grid-row-start</strong> e <strong class="codigo">grid-row-end</strong>.</li>
+			<li>Usando a propriedade <strong class="codigo">grid-area</strong> e mencionando as linhas de inicio e fim através dos nomes das respectivas e assim delimitando a área do <strong>grid-item</strong></li>
+			<li>Usando a propriedade <strong class="codigo">grid-area</strong> e mencionando a área como no caso da célula 3. No exemplo as linhas definem dois conteiners um com o nome <strong>content</strong> e outro com o nome <strong>main</strong>.</li>
+		</ul>
+	</div>
+	<div class="codigo2">
+		<h5>Exemplo 13</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
+	grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];
+	grid-gap: 10px;
+}	
+.cards .item:nth-child(1) {
+	grid-row-start: content-end;
+	grid-column-start: content-end;
+	grid-row-end: main-end;
+	grid-column-end: main-end;
+	
+}
+.cards .item:nth-child(2) {
+	grid-area: main-start / main-start / main-end / content-start;	
+}
+
+.cards .item:nth-child(3) {
+	grid-area: content ;
+}
+				</code>
+			</pre>
+	</div>
+	<div class="resultado2">
+		<h5>Resultado</h5>
+		<div class="exemplo_13">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+		<h4>Definindo Grid áreas</h4>
+		<p>Cada <strong>grid-iem</strong> é nomeado com o uso da propriedade <strong class="codigo">grid-area</strong>. No <strong>grid-conteiner</strong>, com o uso da propriedade <strong class="codigo">grid-template-areas</strong>, mapeamos o posicionamento dos itens no grid.</p>
+		<p class="obs">Usando <strong>Media queries</strong> podemos definir grids e posicionamentos diferenciados para os itens em função dos tamanhos de telas.</p>
+		
+	</div>
+	<div class="codigo2">
+		<h5>Exemplo 14</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards{
+	display: grid;
+	grid-template-columns: repeat(3 , 1fr);
+	grid-template-rows: repeat(2 , 200px);
+	grid-gap: 10px;
+	grid-template-areas:	" side1 main main"
+							" side2 main main";
+}
+.cards .item:nth-child(1) {
+	grid-area: side1;
+	
+}
+.cards .item:nth-child(2) {
+	grid-area: side2;	
+}
+
+.exemplo_14 .item:nth-child(3) {
+	grid-area: main;
+}
+				</code>
+			</pre>
+	</div>
+	<div class="resultado2">
+		<h5>Resultado</h5>
+		<div class="exemplo_14">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+<script src="js/menu.js"></script>
+<script src="js/prism.js"></script>
+</body>
+</html>

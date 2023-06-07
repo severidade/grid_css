@@ -1,0 +1,201 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+body { font-size: 62.5%; font-family: 'Lato', sans-serif; position: relative; color: #478685; background: #f4f2ea}
+
+header { display: flex; flex-direction: row; flex-wrap: wrap; position: fixed; width: 100%; height: 100vh; top: 0px; left: -100%; z-index: 999; }
+.ui-loader { display:none !important;}
+.navbar {
+	display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; width: 100%; height: 70px; position: fixed; top: -700px; left: 0; background: #fff;/* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.17))*/;
+	-webkit-transition: all 0.5s ease-in-out; 
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	top: 0px;
+}
+.menuFixar {  }
+.hamburguer { width: 60px; height: 100%; position: absolute; top: 0px; left: 0px; margin-right: 10px; background: url(../img/svg/menu.svg) no-repeat; background-size: 50%; background-position: center;}
+.title { display: flex; 
+	flex-direction: row; 
+	flex-wrap: wrap;
+	margin-left: 60px;
+	height: 100%; 
+	justify-content: flex-start; 
+	align-items: center; 
+}
+.title h1 { font-size: 1.8em; font-weight: 400; color: #384769; text-transform: uppercase;}
+
+/* esta classe é o conteiner de todos os menus */
+.menuoptions { position: absolute; width: 100%; height: 100vh; top: 0px; left:  0%;
+	-webkit-transition: all 0.7s ease-in-out; 
+	-moz-transition: all 0.7s ease-in-out;
+	-ms-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;  
+	z-index: 999;
+} 
+
+
+/* NÍVEL 1 */
+.menu_level_01 {
+	position: absolute; top: 0px; left: -180%; height: 100vh; width: 75%;
+	background: #fff;
+	-webkit-transition: all 1.2s ease-in-out; 
+	-moz-transition: all 1.2s ease-in-out;
+	-ms-transition: all 1.2s ease-in-out;
+	-o-transition: all 1.2s ease-in-out;
+	-webkit-box-shadow: -7px -1px 31px 19px rgba(0,0,0,0.66);
+	-moz-box-shadow: -7px -1px 31px 19px rgba(0,0,0,0.66);
+	box-shadow: -15px -6px 31px 19px rgba(0,0,0,0.66);
+}
+
+.menu_level_01 nav {
+	display: flex;
+	flex-direction: column; 
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.menu_level_01 nav a {
+	display: flex;
+	flex-direction: row; 
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 40px 0 10px;
+	flex-grow: 1;
+	border-bottom: 1px solid #0F1626;
+	text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    font-size: 1.8em;
+    color: #0F1626;
+    position: relative;
+    border-bottom: 1px solid rgba(87, 91, 103, 0.7);
+    max-height: 50px;
+}
+.menu_level_01 a.sub::after {
+	content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    height: 100%;
+    background: url(../img/svg/arrow-right.svg) no-repeat; background-size: 50%; background-position: center;
+}
+
+/* NÍVEL 2 */
+.menu_level_02 {
+	position: absolute;
+	width: 75%;
+	min-height: 100vh;
+	top: 0px;
+	left: -100%;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 0;
+	-webkit-transition: all .8s ease-in-out; 
+-moz-transition: all .8s ease-in-out;
+-ms-transition: all .8s ease-in-out;
+-o-transition: all .8s ease-in-out;
+}
+
+
+.menu_level_02 nav {
+	display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+	padding: 0;
+    min-height: calc(100vh - 150px);
+}
+.label_back, .menu_level_02 nav a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	/*text-transform: uppercase;*/
+	padding: 0 10px 0 40px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    font-size: 1.8em;
+}
+.label_menu { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-transform: uppercase; font-size: 1.8em; padding: 0 10px; font-weight: 700; height: 70px;}
+.label_back { background: #0F1626 ; height: 40px; color: #fff; padding: 0 10px 0 40px; cursor: pointer;}
+.label_back::before {
+	content: " "; 
+	width: 20px;
+    height: 20px;
+    background: orange;
+    position: absolute;
+    margin-left: -30px;
+    background: url(../img/svg/left-arrow.svg) no-repeat; background-size: 50%; background-position: center;
+}
+
+.menu_level_02 nav a { height: 50px; position: relative; color: #0F1626; border-bottom: 1px solid rgba(87, 91, 103, 0.7);}
+
+div[class^="menu_level"] nav a:hover {
+    background: #0f162626;
+}
+#bola
+a.level_02 { z-index:1}
+a.level_02::before {     content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -4;}
+
+
+.hotspot {
+    width: 100%;
+    height: 100%;
+    /*background: rgba(0, 0, 255, 0.35);*/
+}
+
+.closeMenu {
+    width: 100%;
+    height: 100%;
+        background: rgba(15, 22, 38, 0.57);
+    position: absolute;
+    right: 0px;
+    
+}
+
+.isActive {
+	left:  100%;
+}
+.optionsActive {
+	left: 0px;
+}
+
+.noscroll {
+height: 100%;
+overflow: hidden !important;
+width: 100%;
+}
+
+@media screen and (min-width: 425px) {
+.menu_level_01, .menu_level_02  { width: 300px;}
+}
+@media screen and (min-width: 724px) {
+	.navbar { top: 0px; }
+
+}
+
+
+
+
+
+
+
+
+
+/*
+
+a[id^="option01"] { background: black }
+seleciona todos os links que tenham o id comecando por optino01 
+
+*/

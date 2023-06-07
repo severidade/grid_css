@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import ReactPlayer from "react-player";
+import fetchThumbnailUrl from "../utils/fetchThumbnailUrl";
 
 export default function Home() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -9,16 +10,12 @@ export default function Home() {
   const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   useEffect(() => {
-    fetchThumbnailUrl();
+    fetchThumbnail();
   }, []);
-
-  const fetchThumbnailUrl = async () => {
+  
+  const fetchThumbnail = async () => {
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`
-      );
-      const data = await response.json();
-      const thumbnailUrl = data.items[0].snippet.thumbnails.high.url; 
+      const thumbnailUrl = await fetchThumbnailUrl(videoId, API_KEY);
       setThumbnailUrl(thumbnailUrl);
     } catch (error) {
       console.log("Erro ao buscar o URL do thumbnail:", error);

@@ -31,14 +31,14 @@ export default function Home() {
     <>
       <Navbar />
       <h1>Página Home</h1>
-      <div className="container_master">
-        <div className="site_titulo">
+      <div className="container">
+        <div className="container_title">
           <h2><strong>Introdução</strong></h2>
         </div>
-        <div className="artigo">
+        <article className="container_article">
           <p>CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Grids que podem usados para "layoutar" tanto as grandes regiões de uma página como os pequenos elementos de uma interface de usuários.</p>
-        </div>
-        <div className="video_container">
+        </article>
+        <div className="container_video">
           {!isVideoPlaying && (
             <div>
               {thumbnailUrl && (
@@ -58,7 +58,7 @@ export default function Home() {
             />
           )}
         </div>
-        <div>
+        <div className="container_links">
           <ExternalLink 
             href={"https://codepen.io/rachelandrew/"}
             linkText={"codpen"} 
@@ -70,6 +70,7 @@ export default function Home() {
             social_type={"specky"} 
           />
         </div>
+        <div className="background"></div>
         
       </div>
       

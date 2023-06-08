@@ -32,3 +32,5 @@ jobs:
           local_dir: ${{ secrets.FTP_LOCAL_DIR}}
           remote_dir: ${{ secrets.FTP_REMOTE_DIR}}
           delete: "false"
+          env:
+            REACT_APP_YOUTUBE_API_KEY: ${{ secrets.REACT_APP_YOUTUBE_API_KEY }}

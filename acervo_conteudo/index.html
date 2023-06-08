@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>Menu_multi_nivel</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<!--<script src="js/jquery.mobile.custom.min.js"></script>-->
+</head>
+<body>
+	<header class="menu">
+			<div class="navbar">
+				<div class="hamburguer"><div class="hotspot"></div></div>
+				<a href="index.html" class="title">
+					<h1>CSS <strong>Grid Layout</strong></h1>
+				</a>
+			</div>
+			<div class="menuoptions">
+				<div class="closeMenu"><div class="hotspot"></div></div>
+				<!--  NIVEL 1 -->
+				<div class="menu_level_01">
+					<nav>
+						<a id="option01_0" href="definindo_grid.html">Definindo o Grid</a>
+						<a id="option01_1" href="definindo_grid_implicito.html">Grid Implicito</a>
+						<a id="option01_2" href="posicionando_elementos_grid.html">Posicionando no Grid</a>
+						<a id="option01_3" href="">Opção_03</a>
+						<a id="option01_4" class="sub" href="#menuoptions_02_4">Opção_04</a>
+						<a id="option01_5" href="">Opção_05</a>
+						<a id="option01_6" href="">Opção_06</a>
+						<a id="option01_7" href="">Opção_07</a>
+					</nav>
+				</div>
+				<!--  NIVEL 2 -->
+				<div class="menu_level_02" id="menuoptions_02_2">
+					<span class="label_menu">Opção_02</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_02_1</a>
+						<a class="level_02" href="">Opção_02_2</a>
+						<a class="level_02" href="">Opção_02_3</a>
+						<a class="level_02" href="">Opção_02_4</a>					
+					</nav>
+				</div>
+				<div class="menu_level_02" id="menuoptions_02_4">
+					<span class="label_menu">Opção_04</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_04_1</a>
+						<a class="level_02" href="">Opção_04_2</a>
+						<a class="level_02" href="">Opção_04_3</a>
+						<a class="level_02" href="">Opção_04_4</a>			
+					</nav>
+				</div>
+		
+			</div>
+	</header>
+	<div class="connteiner_master">
+		<div class="site_titulo"><h2 class=""><strong>Introdução</strong></h2></div>
+		<div class="artigo">
+			<p class="resumo">CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Grids que podem usados para "layoutar" tanto as grandes regiões de uma página como os pequenos elementos de uma interface de usuários. </p>
+		</div>
+		<div class="video">
+			<div class="video_content">
+				<div class="embed-container"><iframe width="" height="" src="https://www.youtube.com/embed/N5Lt1SLqBmQ?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+			</div>
+		
+			
+		</div>
+		<div class="links">
+			<a href="https://codepen.io/rachelandrew/" target="_blank" id="codpen">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#384769" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+  				<path d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"/>
+				</svg>
+			</a>
+			<a href="https://speckyboy.com/dev-talks-presentations-future-css/" target="_blank" id="specky"><img src="img/logo_specky.png" alt=""></a>
+		</div>
+		<div class="bg"></div>
+	</div>
+<script src="js/menu.js"></script>
+<script src="js/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+	<header class="menu">
+			<div class="navbar">
+				<div class="hamburguer"><div class="hotspot"></div></div>
+				<a href="index.html" class="title">
+					<h1>CSS <strong>Grid Layout</strong></h1>
+				</a>
+			</div>
+			<div class="menuoptions">
+				<div class="closeMenu"><div class="hotspot"></div></div>
+				<!--  NIVEL 1 -->
+				<div class="menu_level_01">
+					<nav>
+						<a id="option01_0" href="definindo_grid.html">Definindo o Grid</a>
+						<a id="option01_1" href="definindo_grid_implicito.html">Grid Implicito</a>
+						<a id="option01_2" href="posicionando_elementos_grid.html">Posicionando no Grid</a>
+						<a id="option01_3" href="">Opção_03</a>
+						<a id="option01_4" class="sub" href="#menuoptions_02_4">Opção_04</a>
+						<a id="option01_5" href="">Opção_05</a>
+						<a id="option01_6" href="">Opção_06</a>
+						<a id="option01_7" href="">Opção_07</a>
+					</nav>
+				</div>
+				<!--  NIVEL 2 -->
+				<div class="menu_level_02" id="menuoptions_02_2">
+					<span class="label_menu">Opção_02</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_02_1</a>
+						<a class="level_02" href="">Opção_02_2</a>
+						<a class="level_02" href="">Opção_02_3</a>
+						<a class="level_02" href="">Opção_02_4</a>					
+					</nav>
+				</div>
+				<div class="menu_level_02" id="menuoptions_02_4">
+					<span class="label_menu">Opção_04</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_04_1</a>
+						<a class="level_02" href="">Opção_04_2</a>
+						<a class="level_02" href="">Opção_04_3</a>
+						<a class="level_02" href="">Opção_04_4</a>			
+					</nav>
+				</div>
+		
+			</div>
+	</header>
+
+	<div class="connteiner_master_internas">
+		<div class="titulo"><h3>Grid Implícito</h3></div>
+		<div class="texto">
+			<h4>Adicionando linhas implicitamente</h4>
+			<p>Nos exempos mostrados até o momento foram definidos as colunas e as linhas do grid. Todavia se as linhas não forem definidas elas serão automaticamente criadas. É o caso do <strong>Exemplo 05</strong></p>
+			<p class="obs">As colunas precisam ser declaradas explicitamente.</p>
+	</div>
+
+	<div class="codigo">
+		<h5>Exemplo 05</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_05">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+			<div class="item item-07"><p>07</p></div>
+			<div class="item item-08"><p>08</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+			<h4>Linhas implícitas com altura fixa</h4>
+			<p>Para definir a alutra da linha declarada implicitamente basta usar propiedade <strong class="codigo">grid-auto-rows</strong> atribuindo a ela um valor como no <strong>Exemplo 6</strong>.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 06</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_06">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+			<div class="item item-07"><p>07</p></div>
+			<div class="item item-08"><p>08</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+			<h4 id="">Adicionando colunas automaticamente</h4>
+			<p>Para estabelecer o ajuste de colunas no grid automaticamente basta usar o valor <strong class="codigo">auto-fill</strong> definindo uma largura para a coluna. Caso o <strong>grid-item</strong> não caiba naquela linha ele é automaticamente enviado para a linha abaixo.</p>
+			<p>Haverá espaços vazios no <strong>grid-conteiner</strong> caso:</p>
+			<ul>
+				<li>o valor seja menor que o especificado para a largura da coluna;</li>
+				<li>Se a largura total de todos os <strong>grid-itens</strong> mais os <strong>grid-gaps</strong> for menor que o comprimento do conteiner.</li>
+			</ul>
+			<p>Redimensione a caixa cinza do <strong>Exemplo 7</strong> e veja o resultado</p>
+	</div>
+	<div class="codigo2">
+		<h5>Exemplo 07</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 100px);
+	grid-auto-rows: 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	
+	<div class="resultado2">
+		<h5>Resultado</h5>
+		<div class="resize exemplo_07">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+		</div>
+	</div>
+
+
+	<div class="texto">
+			<h4 id="">A função minmax( )</h4>
+			<p>Com a função <strong>minmax</strong> é possível criar um grid mais flexivel diminuindo a possibilidade de aparecimento de espaços vazios pois largura da coluna é definida por um intervalo <strong class="codigo">minmax(200px, 2fr)</strong></p>
+	</div>
+	<div class="codigo2">
+		<h5>Exemplo 08</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-auto-rows: 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado2">
+		<h5>Resultado</h5>
+		<div class="resize exemplo_08">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+		</div>
+	</div>
+
+<script src="js/menu.js"></script>
+<script src="js/prism.js"></script>
+</body>
+</html>

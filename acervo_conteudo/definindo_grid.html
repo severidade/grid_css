@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+	<header class="menu">
+			<div class="navbar">
+				<div class="hamburguer"><div class="hotspot"></div></div>
+				<a href="index.html" class="title">
+					<h1>CSS <strong>Grid Layout</strong></h1>
+				</a>
+			</div>
+			<div class="menuoptions">
+				<div class="closeMenu"><div class="hotspot"></div></div>
+				<!--  NIVEL 1 -->
+				<div class="menu_level_01">
+					<nav>
+						<a id="option01_0" href="definindo_grid.html">Definindo o Grid</a>
+						<a id="option01_1" href="definindo_grid_implicito.html">Grid Implicito</a>
+						<a id="option01_2" href="posicionando_elementos_grid.html">Posicionando no Grid</a>
+						<a id="option01_3" href="">Opção_03</a>
+						<a id="option01_4" class="sub" href="#menuoptions_02_4">Opção_04</a>
+						<a id="option01_5" href="">Opção_05</a>
+						<a id="option01_6" href="">Opção_06</a>
+						<a id="option01_7" href="">Opção_07</a>
+					</nav>
+				</div>
+				<!--  NIVEL 2 -->
+				<div class="menu_level_02" id="menuoptions_02_2">
+					<span class="label_menu">Opção_02</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_02_1</a>
+						<a class="level_02" href="">Opção_02_2</a>
+						<a class="level_02" href="">Opção_02_3</a>
+						<a class="level_02" href="">Opção_02_4</a>					
+					</nav>
+				</div>
+				<div class="menu_level_02" id="menuoptions_02_4">
+					<span class="label_menu">Opção_04</span>
+					<span class="label_back">Back</span>
+					<nav>
+						<a class="level_02" href="">Opção_04_1</a>
+						<a class="level_02" href="">Opção_04_2</a>
+						<a class="level_02" href="">Opção_04_3</a>
+						<a class="level_02" href="">Opção_04_4</a>			
+					</nav>
+				</div>
+		
+			</div>
+	</header>
+
+	<div class="connteiner_master_internas">
+		<div class="titulo"><h3>Definindo o grid</h3></div>
+		<div class="texto">
+			<h4 id="02_1_inter1">Criando o Conteiner</h4>
+			<p>A primeria coisa a fazer é criar um <strong>grid container</strong> com as declarações CSS <strong class="codigo">display: grid</strong> ou <strong class="codigo">display: inline-grid</strong>. Assim declarado, todos os elementos filhos diretos daquele container se transformam em <strong>grid items</strong>.</p>
+			<p>É preciso então estabelecer explicitamente o grid. No <strong>Exemplo 01</strong> temos um grid de 3 colunas com o valor <strong>1fr</strong> e duas linhas como o valor de <strong>200px</strong>.</p>
+			<p class="obs"> A unidade <strong>fr</strong> representa uma fração do espaço disponível no container do grid.</p>
+			<p>Com <strong class="codigo">grid-gap: 20px</strong> é definida a separaração tanto em colunas quanto em linhas dos <strong>grid-itens</strong> no valor de 10px.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 01</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 100px 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_01">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+		</div>
+	</div>
+	<div class="texto">
+			<h4 id="02_1_inter2">Proporção entre colunas</h4>
+			<p>A proporção entre as colunas pode ser variável. No <strong>Exemplo 2</strong> foram ciadas três colunas mas o espaço do grid foi dividido em 4 frações. As duas primeiras colunas ocupam respectivamente <strong>uma fração</strong> e a terceira coluna <strong>duas frações</strong>.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 02</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	grid-template-rows: 100px 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_02">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+			<h4 id="02_1_inter3">Unidades de comprimento</h4>
+			<p>É possível misturar a unidade <strong>fr</strong> com outras unidades de comprimento como: <strong>px, vw, em</strong>. Veja o <strong>Exemplo 04</strong> o conteiner apresenta três colunas a primeira com o valor fixo de <strong>30px</strong>. O espaço restante é dividido em três frações sendo que a segunda coluna representa uma fração <strong>1fr</strong> e a terceira representa duas frações <strong>2fr</strong>.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 03</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: 30px 1f 2fr;
+	grid-template-rows: 100px 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_03">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+		</div>
+	</div>
+
+
+	<div class="texto">
+			<h4>Otimizando a escrita</h4>
+			<p>A grafia reduzida <strong class="codigo">grid-template-columns: repeat(2, 2fr) 1fr;)</strong> pode para otimizar a escrita <strong>evitando</strong> a repetição. No <strong>Exemplo 04</strong> o conteiner foi dividido em 5 partes. As duas primeiras colunas representam 2 partes cada sendo que a última representa uma parte.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 04</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(2, 2fr) 1fr;);
+	grid-template-rows: 100px 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_04">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+			<h4>Grid implicito</h4>
+			<p>Nos exempos mostrados até o momento foram definidos as colunas e as linhas do grid. Todavia se as linhas não forem definidas elas serão automaticamente criadas. É o caso do <strong>Exemplo 05</strong></p>
+			<p class="obs">As colunas precisam ser declaradas explicitamente.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 05</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_05">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+			<div class="item item-07"><p>07</p></div>
+			<div class="item item-08"><p>08</p></div>
+		</div>
+	</div>
+
+	<div class="texto">
+			<p>Para definir a alutra da linha declarada implicitamente basta usar propiedade <strong class="codigo">grid-auto-rows</strong> atribuindo a ela um valor como no <strong>Exemplo 6</strong>.</p>
+	</div>
+	<div class="codigo">
+		<h5>Exemplo 06</h5>
+			<pre class="language-css">
+				<code class="language-css">
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 100px;
+	grid-gap: 10px;
+}	
+				</code>
+			</pre>
+	</div>
+	<div class="resultado">
+		<h5>Resultado</h5>
+		<div class="exemplo_06">
+			<div class="item item-01"><p>01</p></div>
+			<div class="item item-02"><p>02</p></div>
+			<div class="item item-03"><p>03</p></div>
+			<div class="item item-04"><p>04</p></div>
+			<div class="item item-05"><p>05</p></div>
+			<div class="item item-06"><p>06</p></div>
+			<div class="item item-07"><p>07</p></div>
+			<div class="item item-08"><p>08</p></div>
+		</div>
+	</div>
+<script src="js/menu.js"></script>
+<script src="js/prism.js"></script>
+</body>
+</html>

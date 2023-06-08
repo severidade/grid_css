@@ -1,0 +1,165 @@
+body{ overflow-x: hidden; }
+
+.item { border: solid 1px rgba(128, 128, 128, 0.45); overflow: hidden;}
+.item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.cards{
+  width: 80vw;
+  min-height: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.cards:nth-of-type(1) {
+  background: #0bff2245;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-template-rows: 200px 200px;
+  grid-gap: 20px;
+}
+
+/* 
+  01 - Criei duas colunas iguais
+  02 - Defini que o conteúdo esta em duas linhas
+  03 - Definido que entre cada elemento filho tem 20px de distancia
+*/
+
+.cards:nth-of-type(2) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: 3fr 3fr 6fr;
+  grid-template-rows: 200px 200px;
+  grid-gap: 20px;
+}
+
+/* 
+  foram criadas tres colunas e o espaço do conteiner dividido em 4partes
+  As duas primeiras culunas ocupam 1fr e a terceira ocupa 2fr
+
+  É possível misturar unidades como (grid-template-columns: 200px 1fr 2fr; )
+
+  Pare evitar a repetição outra possibilidade é usar ( grid-template-columns: repeat(3, 1fr); )
+  é o mesmo que dizer que serão criada tres colunas de tamanho 1fr
+
+*/
+
+.cards:nth-of-type(3) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(3, 4fr);
+  grid-template-rows: 200px 200px;
+  grid-gap: 20px;
+}
+
+.cards:nth-of-type(4) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-row: auto;
+  grid-gap: 20px;
+}
+
+.cards:nth-of-type(5) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: 2fr 2fr 6fr;
+  grid-row: auto;
+  grid-gap: 20px;
+}
+
+/*  a declaração das linhas porde ser explicita "grid-templete-rows: repeat( 12, 200px);" 
+    a declaração das linhas pode ser implicita "grid-row: auto;"
+    outra declaração implicita define a altura das linhas "grid-auto-rows: 200px; "
+
+*/
+
+.cards:nth-of-type(6) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(4, 20vw);
+  /* grid-template-columns: repeat(auto-fill, minmax( 10px, 20vw)); 
+    quadrados perfeitos assim
+  */
+  grid-auto-rows: 20vw; /* declaração implicita de que as linhas devem ter 20vw dea altura */
+}
+
+.cards:nth-of-type(7) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  /* grid-auto-columns: 100px;  isso da certo se a caixa for redimensionnada verticalmente. */
+  grid-auto-rows: 100px;
+  grid-gap: 20px;
+}
+
+.cards:nth-of-type(7) .item-4 { background: orange; }
+
+
+
+.cards:nth-of-type(8) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax( 90px, 4fr));
+  /*  desse jeito defino que o tamanho mínimo é 100 e o maximo é 7fr 
+      qualquer tamanho entre esse intervalo é administrado para que o item caiba em toda dimensao horizontal do pai. */
+  grid-auto-rows: 90px;
+  grid-gap: 20px;
+}
+
+/* Place itens no grid - esses nao sao os melhores exmplos disso fazer depois. */
+.placing_cards {
+  width: 50vw;
+  min-height: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.placing_cards:nth-of-type(1) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  grid-auto-rows: 200px;
+  grid-gap: 20px;
+}
+
+.placing_cards:nth-of-type(1) .item-1 {
+/*  grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    ---------
+    grid-column: 2/4;
+    grid-row: 1/3;
+    ---------
+    maneira mais reduzida abaixo:
+    Grid área definido por: linha de inicio / coluna de inicio / linha final /coluna final*/
+    grid-area: 1 / 2 / 3 / 4;
+}
+.placing_cards:nth-of-type(2) {
+  background: #d5ff0b45;
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  grid-template-rows: repeat(2 , 200px);
+  grid-gap: 20px;
+  grid-template-areas:  " main main side2"
+                        " main main side1"
+}
+
+.placing_cards:nth-of-type(2) .item-1 {
+  grid-area: main;
+
+}
+.placing_cards:nth-of-type(2) .item-2 {
+  grid-area: side1;
+
+}
+.placing_cards:nth-of-type(2) .item-3 {
+  grid-area: side2;
+} 
+
+@media screen and (min-width: 800px) {
+
+}

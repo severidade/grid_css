@@ -1,0 +1,4 @@
+.container_header{
+  height: var(--nav-height);
+  background-color: white;
+}

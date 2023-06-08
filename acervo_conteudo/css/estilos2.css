@@ -1,0 +1,64 @@
+body{ overflow-x: hidden; }
+.column + .column { margin-left: 1.6%;} /* Seletor irmão adjacente - Isso irá criar uma margem esquerda para cada coluna, exceto a primeira*/
+
+.container{
+  display: grid;
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  /*grid-template-columns: 40px 80% auto;*/
+  grid-template-columns: 5vw 1fr 1fr 5vw;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-gap: 10px;
+}
+
+
+.item{
+ 
+  background-color: white;
+}
+
+.item-1 {
+  grid-row-start: 1;
+  grid-row-end: 4;	
+  background: blue;
+}
+
+.item-2 {
+    /* position: fixed; */
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    
+}
+.item-7 {
+    grid-column-start: 4;
+    /*grid-column-end: 5;*/
+    grid-row-start: 1; 
+    grid-row-end: 4;	
+    background: pink;
+}
+.item-footer {
+  grid-column-start: 2;
+  grid-column-end: 4; 
+  height: 50px;
+}
+
+.titulo { width: 100%; height: 50px; background: pink; }
+.social_conteiner { 
+  width: 100%;
+  background: olive;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.social_conteiner2 { 
+  width: 100%;
+  background: olive;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.social_item {  background: orange; }
+

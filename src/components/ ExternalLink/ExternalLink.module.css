@@ -1,0 +1,17 @@
+.social_codpen, .social_specky {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -300px;
+  width: 120px;
+  height: 30px;
+}
+
+.social_codpen{
+  background: url(./img/codpen.svg) center / contain no-repeat;
+  background-size: 80%;
+}
+
+.social_specky{
+  background: url(./img/specky.png) center / contain no-repeat;
+  background-size: 75%;
+}

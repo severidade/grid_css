@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+/acervo_conteudo
 # dependencies
 /node_modules
 /.pnp

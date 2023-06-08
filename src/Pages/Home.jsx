@@ -32,7 +32,7 @@ export default function Home() {
       <Navbar />
       <div className="container_master">
         <div className="container_title">
-          <h2><strong>Introdução</strong></h2>
+          <h2><strong>Introdução - teste</strong></h2>
         </div>
         <article className="container_article">
           <p>CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Os Grids podem usados para organizar os layouts tanto de grandes regiões de uma página como os pequenos elementos de uma interface de usuários.</p>

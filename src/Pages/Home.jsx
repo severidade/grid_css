@@ -11,18 +11,18 @@ export default function Home() {
   const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   useEffect(() => {
-    const fetchThumbnail = async () => {
-      try {
-        const thumbnailUrl = await fetchThumbnailUrl(videoId, API_KEY);
-        setThumbnailUrl(thumbnailUrl);
-      } catch (error) {
-        console.log("Erro ao buscar o URL do thumbnail:", error);
-      }
-    };
-  
     fetchThumbnail();
-  }, [videoId, API_KEY]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   
+  const fetchThumbnail = async () => {
+    try {
+      const thumbnailUrl = await fetchThumbnailUrl(videoId, API_KEY);
+      setThumbnailUrl(thumbnailUrl);
+    } catch (error) {
+      console.log("Erro ao buscar o URL do thumbnail:", error);
+    }
+  };
 
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);

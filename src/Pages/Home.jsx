@@ -8,7 +8,8 @@ export default function Home() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [thumbnailUrl, setThumbnailUrl] = useState("");
   const videoId = "N5Lt1SLqBmQ"; // ID do vídeo do YouTube
-  const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+  // const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+  const API_KEY ="AIzaSyC4MuHcSfkMK4qevP9Gr6PgsxxmMXViuow";
 
   const fetchThumbnail = useCallback(async () => {
     try {

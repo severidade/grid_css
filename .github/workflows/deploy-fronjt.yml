@@ -18,6 +18,10 @@ jobs:
       - run: npm run build
       - run: cp .htaccess ./build
 
+      # Definir a variável de ambiente REACT_APP_YOUTUBE_API_KEY
+      - name: Set environment variable
+        run: echo "REACT_APP_YOUTUBE_API_KEY=${{ secrets.REACT_APP_YOUTUBE_API_KEY }}" >> $GITHUB_ENV
+
       # Deploy do front
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest

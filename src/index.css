@@ -83,6 +83,11 @@ p strong.codigo, li strong.codigo {
   word-wrap: break-word;
 }
 
+.item p {
+  color: rgba(62, 71, 105, 0.3);
+  padding-bottom: inherit;
+}
+
 div[class*="exemplo_"] {
   background: #d3d4d675;
   margin-bottom: 24px;

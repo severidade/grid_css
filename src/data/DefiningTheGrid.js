@@ -24,6 +24,19 @@ const DefiningTheGrid = {
     Result:{
       NumberOfItems: 6,
     }
+  },
+  3: {
+    Title: "Unidades de comprimento",
+    Description: "<p>É possível misturar a unidade <strong>fr</strong> com outras unidades de comprimento como: <strong>px, vw, em</strong>. Veja o <strong>Exemplo 04</strong> o conteiner apresenta três colunas a primeira com o valor fixo de <strong>30px</strong>. O espaço restante é dividido em três frações sendo que a segunda coluna representa uma fração <strong>1fr</strong> e a terceira representa duas frações <strong>2fr</strong>.</p>",
+    Code: `.cards { 
+      display: grid;
+      grid-template-columns: 30px 1f 2fr;
+      grid-template-rows: 100px 100px;
+      grid-gap: 10px;
+    }`,
+    Result:{
+      NumberOfItems: 6,
+    }
   }
 };
 

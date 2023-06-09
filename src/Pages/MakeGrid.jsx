@@ -34,6 +34,8 @@ export default function MakeGrid() {
       <div className="container_examples">
         {Object.keys(DefiningTheGrid).map((exampleKey) => {
           const example = DefiningTheGrid[exampleKey];
+          const numberOfItems = example.Result.NumberOfItems;
+
           return (
             <div className="example" key={exampleKey}>
               <h4 className="example_title">{example.Title}</h4>
@@ -53,11 +55,11 @@ export default function MakeGrid() {
               <div className="resultado">
                 <h5>Resultado</h5>
                 <div className={`exemplo_${exampleKey}`}>
-                  <div class="item item-01"><p>01</p></div>
-                  <div class="item item-02"><p>02</p></div>
-                  <div class="item item-03"><p>03</p></div>
-                  <div class="item item-04"><p>04</p></div>
-                  <div class="item item-05"><p>05</p></div>
+                  {Array.from(Array(numberOfItems).keys()).map((itemIndex) => (
+                    <div className={`item item-0${itemIndex + 1}`} key={itemIndex}>
+                      <p>{itemIndex + 1}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

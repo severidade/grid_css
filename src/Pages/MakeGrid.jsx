@@ -9,22 +9,36 @@ import DefiningTheGrid from '../data/DefiningTheGrid';
 
 export default function MakeGrid() {
   const [copySuccess, setCopySuccess] = React.useState('');
-
+  
   const handleCopy = (exampleKey) => {
     const example = DefiningTheGrid[exampleKey];
     const code = example.Code;
-
-    navigator.clipboard.writeText(code)
-    .then(() => {
-      setCopySuccess(exampleKey);
-      setTimeout(() => {
-        setCopySuccess('');
-      }, 2000); // Remover a mensagem após 2 segundos (2000 milissegundos)
-    })
-      .catch((error) => {
-        console.error('Falha ao copiar o código:', error);
-      });
+  
+    const tempInput = document.createElement('textarea');
+    tempInput.value = code;
+  
+    document.body.appendChild(tempInput);
+  
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+  
+    try {
+      const success = document.execCommand('copy');
+      if (success) {
+        setCopySuccess(exampleKey);
+        setTimeout(() => {
+          setCopySuccess('');
+        }, 2000);
+      } else {
+        console.error('Falha ao copiar o código');
+      }
+    } catch (error) {
+      console.error('Falha ao copiar o código:', error);
+    }
+  
+    document.body.removeChild(tempInput);
   };
+  
 
   return (
     <>

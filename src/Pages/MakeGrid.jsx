@@ -1,41 +1,40 @@
-import React from "react"
-import Navbar from "../components/Navbar/Navbar"
+import React from "react";
+import Navbar from "../components/Navbar/Navbar";
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import parse from 'html-react-parser';
 
-import DefiningTheGrid from '../data/DefiningTheGrid'
-
+import DefiningTheGrid from '../data/DefiningTheGrid';
 
 export default function MakeGrid() {
+  const [copySuccess, setCopySuccess] = React.useState('');
 
-  const code = `.cards { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-  }`;
-  
-  const [copySuccess, setCopySuccess] = React.useState(false);
+  const handleCopy = (exampleKey) => {
+    const example = DefiningTheGrid[exampleKey];
+    const code = example.Code;
 
-  const handleCopy = () => {
     navigator.clipboard.writeText(code)
-      .then(() => {
-        setCopySuccess(true);
-      })
+    .then(() => {
+      setCopySuccess(exampleKey);
+      setTimeout(() => {
+        setCopySuccess('');
+      }, 2000); // Remover a mensagem após 2 segundos (2000 milissegundos)
+    })
       .catch((error) => {
-        console.error('Failed to copy to clipboard:', error);
+        console.error('Falha ao copiar o código:', error);
       });
   };
 
-  return(
+  return (
     <>
-      <Navbar/>
+      <Navbar />
       <h3>DEFININDO O GRID</h3>
       <div className="container_examples">
         {Object.keys(DefiningTheGrid).map((exampleKey) => {
           const example = DefiningTheGrid[exampleKey];
           const numberOfItems = example.Result.NumberOfItems;
+          const isSuccess = copySuccess === exampleKey;
 
           return (
             <div className="example" key={exampleKey}>
@@ -44,10 +43,8 @@ export default function MakeGrid() {
               <div className="example_code">
                 <h5>Exemplo {exampleKey}</h5>
                 <div className="header_highlighter">
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <button onClick={handleCopy}>Copy To Clipboard</button>
-                    {copySuccess && <span>Copied to clipboard!</span>}
-                  </div>
+                  {!isSuccess && <button className="copy_button" onClick={() => handleCopy(exampleKey)}>Copiar</button>}
+                  {isSuccess && <div className="copied">Copiado!</div>}
                 </div>
                 <SyntaxHighlighter language="css" style={coy}>
                   {example.Code}
@@ -68,5 +65,5 @@ export default function MakeGrid() {
         })}
       </div>
     </>
-  )
+  );
 }

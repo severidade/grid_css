@@ -143,9 +143,7 @@ div[class*="exemplo_"] {
   gap: 20px;
 }
 
-.example_code{
-  width: 50vw;
-}
+
 
 .background {
   background-color: var(--secundary-color-vivid);
@@ -178,4 +176,65 @@ div[class*="exemplo_"] {
   border: none;
   overflow: hidden;
   text-indent: -300%;
+}
+
+
+.example_code{
+  width: 50vw;
+}
+
+.header_highlighter{
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 10px 10px 0px 0px;
+  transform: translateY(5px);
+}
+
+.copy_button {
+  width: 90px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--secundary-color-dark);
+  font-family: 'Lato', sans-serif;
+}
+
+.copy_button::after{
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left:0;
+  top:0;
+  background: url(./img/data-icon.svg) center / contain no-repeat;
+  background-size: 55%;
+}
+
+.copied  {
+  width: 90px;
+  height: 30px;
+  font-size: 12px;
+  color: var(--secundary-color-dark);
+  position: relative;
+  /* background-color: #4c5b7d; */
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copied::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left:0;
+  top:0;
+  background: url(./img/check-icon.svg) center / contain no-repeat;
+  background-size: 45%;
 }

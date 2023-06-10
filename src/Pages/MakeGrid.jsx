@@ -13,18 +13,23 @@ export default function MakeGrid() {
   const handleCopy = (exampleKey) => {
     const example = DefiningTheGrid[exampleKey];
     const code = example.Code;
-
-    navigator.clipboard.writeText(code)
-    .then(() => {
-      setCopySuccess(exampleKey);
-      setTimeout(() => {
-        setCopySuccess('');
-      }, 2000); // Remover a mensagem após 2 segundos (2000 milissegundos)
-    })
-      .catch((error) => {
-        console.error('Falha ao copiar o código:', error);
-      });
+  
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code)
+        .then(() => {
+          setCopySuccess(exampleKey);
+          setTimeout(() => {
+            setCopySuccess('');
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error('Falha ao copiar o código:', error);
+        });
+    } else {
+      console.error('A função writeText não está disponível no navegador.');
+    }
   };
+  
 
   return (
     <>

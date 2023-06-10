@@ -38,7 +38,9 @@ export default function MakeGrid() {
 
           return (
             <div className="example" key={exampleKey}>
-              <h4 className="example_title">{example.Title}</h4>
+              {example.Title && 
+                <h4 className="example_title">{example.Title}</h4>
+              }
               <div className="example_description">{parse(example.Description)}</div>
               <div className="example_code">
                 <h5>Exemplo {exampleKey}</h5>

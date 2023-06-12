@@ -166,7 +166,7 @@ p strong.codigo, li strong.codigo {
 }
 
 .header_highlighter{
-  background-color: white;
+  background-color: #fdfdfd;
   display: flex;
   justify-content: flex-end;
   border-radius: 10px 10px 0px 0px;

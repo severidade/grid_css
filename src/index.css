@@ -83,6 +83,21 @@ p strong.codigo, li strong.codigo {
   word-wrap: break-word;
 }
 
+p { font-size: 15px; line-height: 1.9em; padding-bottom: 24px;}
+ul { margin-bottom: 23px; padding-left: 48px;}
+li {font-size: medium; line-height: 1.9em; padding-bottom: 24px; position: relative;}
+li:last-of-type { padding-bottom: 0; }
+li:after {
+	content: "";
+    width: 12px;
+    height: 12px;
+    background: #009688;
+    position: absolute;
+    top: 9px;
+    border-radius: 2px;
+    left: -24px;
+}
+
 .container_master {
 	width: var(--container-width-mobile);
 	min-height: calc(100vh - var(--nav-height));

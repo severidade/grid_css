@@ -63,7 +63,8 @@ export default function GridExamples({ gridData }) {
             </div>
             <div className="resultado">
               <h5>Resultado</h5>
-              <div className={`exemplo_${exampleKey}`}>
+              <div className={`exemplo_${exampleKey} ${example.Resize ? "resize" : ""}`} key={exampleKey}>
+
                 {Array.from(Array(numberOfItems).keys()).map((itemIndex) => (
                   <div className={`item item-0${itemIndex + 1}`} key={itemIndex}>
                     <p>{itemIndex + 1}</p>

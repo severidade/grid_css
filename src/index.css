@@ -92,7 +92,7 @@ p strong.codigo, li strong.codigo {
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(2, auto) calc(9 / 16 * var(--container-width-mobile)) auto;
   grid-gap: 20px;
 }
 
@@ -111,6 +111,7 @@ p strong.codigo, li strong.codigo {
 .container_video{
   width: var(--container-width-mobile);
   height: calc(9 / 16 * var(--container-width-mobile));
+  background-color: var(--secundary-color-dark);
   grid-column: 1 / 5;
   grid-row: 3 / 4;
 }
@@ -120,7 +121,7 @@ p strong.codigo, li strong.codigo {
   grid-row: 4 / 5;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 

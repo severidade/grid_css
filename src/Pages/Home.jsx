@@ -33,10 +33,17 @@ export default function Home() {
       <Navbar />
       <div className="container_master">
         <div className="container_title">
-          <h2><strong>Introdução - teste</strong></h2>
+          <h2><strong>Introdução</strong></h2>
         </div>
         <article className="container_article">
           <p>CSS Grid Layout prevê funcionalidades para criação de um sistema de grid bidimensional para layout CSS. Os Grids podem usados para organizar os layouts tanto de grandes regiões de uma página como os pequenos elementos de uma interface de usuários.</p>
+          <p>Quando assisti à palestra de 
+              <ExternalLink 
+                href={"https://rachelandrew.co.uk/"}
+                linkText={"Rachel Andrew"} 
+                social_type={""} 
+              />
+            em 2017, fiquei fascinado com a facilidade de criar layouts complexos que podem ser facilmente redefinidos com media queries. Este site é o resultado da implementação de alguns dos exemplos práticos apresentados no vídeo a seguir.</p>
         </article>
         <div className="container_video">
           {!isVideoPlaying && (
@@ -71,9 +78,7 @@ export default function Home() {
           />
         </div>
         <div className="background"></div>
-        
       </div>
-      
     </>
   );
 }

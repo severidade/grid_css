@@ -9,6 +9,7 @@ export default function Navbar() {
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/make_grid">Make Grid</NavLink>
+        <NavLink to="/implied_grid">Grid Implicito</NavLink>
       </nav>
     </header>
   )

@@ -8,8 +8,10 @@ export default function ImpliedGrid() {
   return (
     <>
       <Navbar />
-      <h3>GRID IMPLÍCITO</h3>
-      <GridExamples gridData={ ImpliedGridData } />
+      <div className="container">
+        <h3>GRID IMPLÍCITO</h3>
+        <GridExamples gridData={ ImpliedGridData } />
+      </div>
     </>
   );
 }

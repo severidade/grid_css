@@ -35,7 +35,7 @@ h3 {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 3em;
-  padding-bottom: 2.4em;
+  padding-bottom: 1em;
 }
 
 h4 {
@@ -83,26 +83,44 @@ p strong.codigo, li strong.codigo {
   word-wrap: break-word;
 }
 
-p { font-size: 15px; line-height: 1.9em; padding-bottom: 24px;}
-ul { margin-bottom: 23px; padding-left: 48px;}
-li {font-size: medium; line-height: 1.9em; padding-bottom: 24px; position: relative;}
-li:last-of-type { padding-bottom: 0; }
+p { 
+  font-size: 15px;
+  line-height: 1.9em;
+  padding-bottom: 24px;
+}
+
+ul {
+  margin-bottom: 23px;
+  padding-left: 48px;
+}
+
+li {
+  font-size: medium;
+  line-height: 1.9em;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+li:last-of-type {
+  padding-bottom: 0;
+}
+
 li:after {
 	content: "";
-    width: 12px;
-    height: 12px;
-    background: #009688;
-    position: absolute;
-    top: 9px;
-    border-radius: 2px;
-    left: -24px;
+  width: 12px;
+  height: 12px;
+  background: #009688;
+  position: absolute;
+  top: 9px;
+  border-radius: 2px;
+  left: -24px;
 }
 
 .container_master {
 	width: var(--container-width-mobile);
 	min-height: calc(100vh - var(--nav-height));
 	margin: auto;
-	padding-top: 24px;
+	padding-top: 80px;
 	padding-bottom: 24px;
 
   display: grid;
@@ -140,8 +158,6 @@ li:after {
   gap: 20px;
 }
 
-
-
 .background {
   background-color: var(--secundary-color-vivid);
   grid-column: 1 / 5;
@@ -173,4 +189,16 @@ li:after {
   border: none;
   overflow: hidden;
   text-indent: -300%;
+}
+
+.container {
+	padding-top: 80px;
+  width: 90vw;
+  margin: auto;
+}
+
+.container_examples {
+  /* background: olive; */
+  /* width: 90vw;
+  margin: auto; */
 }

@@ -8,8 +8,10 @@ export default function MakeGrid() {
   return (
     <>
       <Navbar />
-      <h3>DEFININDO O GRID</h3>
-      <GridExamples gridData={DefiningTheGrid} />
+      <div className="container">
+        <h3>DEFININDO O GRID</h3>
+        <GridExamples gridData={DefiningTheGrid} />
+      </div>
     </>
   );
 }

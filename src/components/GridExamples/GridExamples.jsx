@@ -47,31 +47,38 @@ export default function GridExamples({ gridData }) {
 
         return (
           <div className="example" key={exampleKey}>
-            {example.Title &&
+            {example.Title && (
               <h4 className="example_title">{example.Title}</h4>
-            }
+            )}
             <div className="example_description">{parse(example.Description)}</div>
-            <div className="example_code">
-              <h5>Exemplo {exampleKey}</h5>
-              <div className="header_highlighter">
-                {!isSuccess && <button className="copy_button" onClick={() => handleCopy(exampleKey)}>Copiar</button>}
-                {isSuccess && <div className="copied">Copiado!</div>}
+            {example.Code && (
+              <div className="example_code">
+                <h5>Exemplo {exampleKey}</h5>
+                <div className="header_highlighter">
+                  {!isSuccess && (
+                    <button className="copy_button" onClick={() => handleCopy(exampleKey)}>
+                      Copiar
+                    </button>
+                  )}
+                  {isSuccess && <div className="copied">Copiado!</div>}
+                </div>
+                <SyntaxHighlighter language="css" style={coy}>
+                  {example.Code}
+                </SyntaxHighlighter>
               </div>
-              <SyntaxHighlighter language="css" style={coy}>
-                {example.Code}
-              </SyntaxHighlighter>
-            </div>
-            <div className="resultado">
-              <h5>Resultado</h5>
-              <div className={`exemplo_${exampleKey} ${example.Resize ? "resize" : ""}`} key={exampleKey}>
-
-                {Array.from(Array(numberOfItems).keys()).map((itemIndex) => (
-                  <div className={`item item-0${itemIndex + 1}`} key={itemIndex}>
-                    <p>{itemIndex + 1}</p>
-                  </div>
-                ))}
+            )}
+            {numberOfItems > 0 && (
+              <div className="resultado">
+                <h5>Resultado</h5>
+                <div className={`exemplo_${exampleKey} ${example.Resize ? "resize" : ""}`} key={exampleKey}>
+                  {Array.from(Array(numberOfItems).keys()).map((itemIndex) => (
+                    <div className={`item item-0${itemIndex + 1}`} key={itemIndex}>
+                      <p>{itemIndex + 1}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         );
       })}

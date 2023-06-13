@@ -2,16 +2,16 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import GridExamples from "../components/GridExamples/GridExamples";
 
-import DefiningTheGrid from '../data/DefiningTheGrid';
+import GridPosition from '../data/GridPositionData';
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
-export default function MakeGrid() {
+export default function PositionOnGrid() {
   return (
     <>
       <Navbar />
       <div className="container">
-        <h3>Definindo o grid</h3>
-        <GridExamples gridData={DefiningTheGrid} />
+        <h3>Posicionando elementos no grid</h3>
+        <GridExamples gridData={GridPosition} />
       </div>
       <ScrollToTop />
     </>

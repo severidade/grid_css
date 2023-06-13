@@ -78,6 +78,10 @@ p.obs {
   color: var(--neutral-color);
 }
 
+.glossario p{
+  padding-bottom: 0;
+}
+
 p strong.codigo, li strong.codigo {
   background-color: var(--primary-color);
   color: var(--neutral-color);

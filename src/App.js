@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './Pages/Home';
 import MakeGrid  from './Pages/MakeGrid';
 import ImpliedGrid from './Pages/ImpliedGrid';
+import PositionOnGrid from './Pages/PositionOnGrid';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/make_grid" element={<MakeGrid />} />
         <Route path='/implied_grid' element={<ImpliedGrid />} />
+        <Route path="/position" element={<PositionOnGrid />} />
       </Routes>
     </>
   );

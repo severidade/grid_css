@@ -40,6 +40,7 @@ export default function Navbar() {
         <NavLink to="/" onClick={toggleMenu}>Home</NavLink>
         <NavLink to="/make_grid" onClick={toggleMenu}>Make Grid</NavLink>
         <NavLink to="/implied_grid" onClick={toggleMenu}>Grid Implicito</NavLink>
+        <NavLink to="/position" onClick={toggleMenu}>Posicionando no Grid</NavLink>
       </nav>
     </header>
   )

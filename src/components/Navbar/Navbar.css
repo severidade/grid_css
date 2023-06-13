@@ -144,7 +144,7 @@
 
 .container_nav.open > a:nth-of-type(4){
   transform: translateX(0%);
-  transition-duration: 2s;
+  transition-duration: 1.2s;
 }
 .container_nav > a[class="active"]{
  color: var(--primary-color);

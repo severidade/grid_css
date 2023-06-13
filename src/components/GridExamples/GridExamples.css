@@ -1,9 +1,30 @@
 .example_code{
   width: 100%;
 }
+.example_code pre {
+	margin-bottom: 40px;
+	/* border: solid 4px tomato; */
+	padding-bottom: 20px !important;
+	margin-bottom: 40px !important;
+	position: relative;
+}
+
+.example_code pre:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: calc(100% + 50px);
+	left: 0;
+	top: 0;
+	background-color: #fdfdfd;;
+	z-index: -1;
+	border-radius: 10px;
+	transform: translateY(-40px);
+	
+}
 
 .header_highlighter{
-  background-color: #fdfdfd;
+  /* background-color: #fdfdfd; */
   display: flex;
   justify-content: flex-end;
   border-radius: 10px 10px 0px 0px;
@@ -69,6 +90,10 @@
 .item p {
   color: rgba(62, 71, 105, 0.3);
   padding-bottom: inherit;
+}
+
+.example{ 
+	margin-bottom: 20px;
 }
 
 div[class*="exemplo_"] {

@@ -1,0 +1,21 @@
+.toTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  transition: ease-in-out 0.5s;
+  border: none;
+  /* background-color: var(--secundary-color-vivid); */
+  background: var(--secundary-color-vivid) url(./img/arrow.png) center / contain no-repeat;
+  background-size: 70%;
+  overflow: hidden;
+  text-indent: -300px;
+}
+
+.toTop.show {
+  opacity: 1;
+
+}

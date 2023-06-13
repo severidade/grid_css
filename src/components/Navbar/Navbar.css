@@ -8,8 +8,8 @@
 }
 
 .hamburger_animacao {
-  width: 25px;
-  height: 2px;
+  width: 30px;
+  height: 4px;
   border-radius: 2px;
   background-color: var(--secundary-color-dark);
   transition: ease-in-out 0.5s;
@@ -21,7 +21,7 @@
 .hamburger_animacao::before, .hamburger_animacao::after{
   content: "";
   width: 30px;
-  height: 2px;
+  height: 4px;
   position: absolute;
   border-radius: 2px;
   right: 0;
@@ -38,13 +38,13 @@
 }
 
 .hamburger.open > .hamburger_animacao {
-  background-color: black;
+  background-color: var(--neutral-color);
   width: 3px;
 }
 
 .hamburger.open > .hamburger_animacao::before{
   transform: rotate(-45deg);
-  transform: rotate(45deg) translate(-8.67px, -5.67px);
+  transform: rotate(45deg) translate(-8.67px, -6.67px);
 }
 
 .hamburger.open > .hamburger_animacao::after{
@@ -103,13 +103,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   position: fixed;
   right: 0;
   top: 0;
   transform: translateY(-100vh);
   padding: 80px 20vw 80px 20vw;
-  gap: 5em;
+  gap: 3em;
   overflow: hidden;
   transition: transform ease-in-out 0s;
 }
@@ -119,9 +119,8 @@
 }
 
 .container_nav > a {
-  color: rgb(108, 107, 107);
-  font-size: 2.5em;
-  text-transform: uppercase;
+  color: var(--secundary-color-dark);
+  font-size: 1.7em;
   font-weight: 900;
   position: relative;
   transform: translateX(-100%);
@@ -148,5 +147,5 @@
   transition-duration: 2s;
 }
 .container_nav > a[class="active"]{
- color: var(--secundary-color-vivid);
+ color: var(--primary-color);
 }

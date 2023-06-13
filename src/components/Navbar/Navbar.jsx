@@ -37,8 +37,9 @@ export default function Navbar() {
       </NavLink>
 
       <nav className={`container_nav ${menuOpen ? 'open' : ''}`}>
-          <NavLink to="/make_grid" onClick={toggleMenu}>Make Grid</NavLink>
-          <NavLink to="/implied_grid" onClick={toggleMenu}>Grid Implicito</NavLink>
+        <NavLink to="/" onClick={toggleMenu}>Home</NavLink>
+        <NavLink to="/make_grid" onClick={toggleMenu}>Make Grid</NavLink>
+        <NavLink to="/implied_grid" onClick={toggleMenu}>Grid Implicito</NavLink>
       </nav>
     </header>
   )

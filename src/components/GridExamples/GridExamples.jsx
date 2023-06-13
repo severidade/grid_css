@@ -67,7 +67,7 @@ export default function GridExamples({ gridData }) {
                 </SyntaxHighlighter>
               </div>
             )}
-            {example.numberOfItems > 0 && (
+            {numberOfItems > 0 && (
               <div className="resultado">
                 <h5>Resultado</h5>
                 <div className={`exemplo_${exampleKey} ${example.Resize ? "resize" : ""}`} key={exampleKey}>

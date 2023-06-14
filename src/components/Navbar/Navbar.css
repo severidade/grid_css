@@ -149,3 +149,37 @@
 .container_nav > a[class="active"]{
  color: var(--primary-color);
 }
+
+.info_prodution {
+  /* background-color: tomato; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.info_prodution p {
+  color: var(--secundary-color-dark);
+  padding-bottom: 0;
+  /* text-align: center; */
+}
+
+.info_prodution ul{ 
+  display: flex;
+  margin-bottom: 0px !important;
+  padding-left: 0px !important;
+  height: 40px;
+}
+
+.info_prodution ul li:after {
+  content: "";
+  display: none;
+}
+
+.social_nav {
+  /* background-color: violet; */
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}

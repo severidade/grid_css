@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 // import styles from './Navbar.module.css';
 
 import './Navbar.css';
+import ExternalLink from '../ ExternalLink/ExternalLink';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,6 +42,26 @@ export default function Navbar() {
         <NavLink to="/make_grid" onClick={toggleMenu}>Make Grid</NavLink>
         <NavLink to="/implied_grid" onClick={toggleMenu}>Grid Implicito</NavLink>
         <NavLink to="/position" onClick={toggleMenu}>Posicionando no Grid</NavLink>
+        <div className='info_prodution'>
+          <p>Este site é o resultado da implementação de alguns dos exemplos práticos de grid CSS
+            {/* <ExternalLink 
+              href={"https://rachelandrew.co.uk/"}
+              linkText={"Rachel Andrew"} 
+              social_type={""} 
+            /> */}
+          </p>
+          <ul className='social_nav'>
+            <li>
+              <ExternalLink href={"https://www.linkedin.com/in/severidade/"} linkText={"Linkedin"} social_type={"linkedin"} />
+            </li>
+            <li>
+              <ExternalLink href={"https://github.com/severidade"} linkText={"GitHub"} social_type={"github"} />
+            </li>
+            <li>
+              <ExternalLink href={"https://codepen.io/severidade"} linkText={"Codepen"} social_type={"codepen"} />
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   )

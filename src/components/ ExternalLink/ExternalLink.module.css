@@ -27,7 +27,31 @@
   background-size: 80%;
 }
 
-.social_specky{
+.social_specky {
   background: url(./img/specky.png) center / contain no-repeat;
   background-size: 75%;
+}
+
+.social_linkedin, .social_github, .social_codepen {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  /* background-color: tomato; */
+  overflow: hidden;
+  text-indent: -300%;
+}
+
+.social_linkedin {
+  background: url(./img/linkedin.png) center / contain no-repeat;
+  background-size: 90%;
+}
+
+.social_github {
+  background: url(./img/github.png) center / contain no-repeat;
+  background-size: 90%;
+}
+
+.social_codepen {
+  background: url(./img/codpenIo.svg) center / contain no-repeat;
+  background-size: 90%;
 }

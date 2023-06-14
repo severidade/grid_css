@@ -42,14 +42,8 @@ export default function Navbar() {
         <NavLink to="/make_grid" onClick={toggleMenu}>Make Grid</NavLink>
         <NavLink to="/implied_grid" onClick={toggleMenu}>Grid Implicito</NavLink>
         <NavLink to="/position" onClick={toggleMenu}>Posicionando no Grid</NavLink>
-        <div className='info_prodution'>
-          <p>Este site é o resultado da implementação de alguns dos exemplos práticos de grid CSS
-            {/* <ExternalLink 
-              href={"https://rachelandrew.co.uk/"}
-              linkText={"Rachel Andrew"} 
-              social_type={""} 
-            /> */}
-          </p>
+        <div className='info_author'>
+          <p>Confira minhas redes para saber mais sobre mim e o que tenho feito.</p>
           <ul className='social_nav'>
             <li>
               <ExternalLink href={"https://www.linkedin.com/in/severidade/"} linkText={"Linkedin"} social_type={"linkedin"} />

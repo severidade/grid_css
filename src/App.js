@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import ReactGA from "react-ga4";
 
 import Home from './Pages/Home';
 import MakeGrid  from './Pages/MakeGrid';
@@ -17,6 +18,14 @@ function ScrollToTop() {
 }
 
 function App() {
+  const TRACKING_ID = 'G-RQM0MCWWF9';
+
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.gtag({ hitType: "pageview", page: document.location.pathname });
+  }, []);
+
+
   return (
     <>
       <ScrollToTop />
